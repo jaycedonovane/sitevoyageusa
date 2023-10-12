@@ -1,0 +1,129 @@
+/* Styles pour les écrans mobiles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: calc(100vw / 6);
+    margin-right: calc(100vw / 6);
+}
+
+#gallery img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+}
+
+/* Styles pour la barre de menu */
+#menu {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: top 0.5s;
+    text-align: center;
+    z-index: 1000;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+.hidden {
+    top: -50px;
+}
+
+/* Styles pour les boutons */
+#restaurant-button, #ycs-button, #decouverte-button {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid transparent;
+    padding: 30px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0;
+}
+
+#restaurant-button:hover, #ycs-button:hover, #decouverte-button:hover {
+    background-color: #727272;
+}
+
+#best-place-button {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid transparent;
+    padding: 30px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0;
+    transition: background-color 0.3s;
+}
+
+#best-place-button:hover {
+    background-color: #727272;
+}
+
+/* Média query pour les écrans de bureau */
+@media (min-width: 768px) {
+    body {
+        background-color: #fff;
+    }
+
+    h1 {
+        font-family: Georgia, sans-serif;
+        letter-spacing: .0313rem;
+        font-size: 5.125rem;
+    }
+
+    p {
+        font-family: "Cambria", sans-serif;
+        font-size: 1.1875rem;
+        display: inline-block;
+    }
+
+    #gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #gallery img {
+        max-width: calc(33.333% - 20px);
+        height: auto;
+        margin: 10px 0;
+    }
+
+    /* Sélectionnez la première image de la famille "restaurant-image" */
+    #gallery img[src^="restaurant-image"]:first-child {
+        margin-top: 300px; /* Ajoutez une marge au-dessus de la première image "restaurant-image" */
+    }
+
+    /* Sélectionnez toutes les images de la famille "restaurant-image" */
+    #gallery img[src^="restaurant-image"] {
+        clear: left; /* Forcez chaque image "restaurant-image" à être sur une nouvelle ligne */
+    }
+}
