@@ -1,6 +1,6 @@
 /* Styles pour les écrans mobiles */
 body {
-    margin: 5;
+    margin: 0;
     padding: 0;
     background-color: #f0f0f0;
     color: #333;
@@ -12,9 +12,13 @@ body {
 }
 
 h1 {
-    margin: 10px;
     font-size: 24px;
     text-align: center;
+}
+
+p {
+    font-size: 1rem;
+    margin: 10px;
 }
 
 #gallery {
@@ -22,18 +26,19 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-left: calc(100vw / 6);
+    margin-right: calc(100vw / 6);
 }
 
 #gallery img {
     max-width: 100%;
     height: auto;
-    margin: 0px;
+    margin: 10px;
 }
 
 /* Styles pour la barre de menu */
 #menu {
-    posution: relative;
-    margin: 5;
+    position: fixed;
     top: -100px;
     left: 0;
     width: 100%;
@@ -48,9 +53,10 @@ h1 {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 65px;
+    margin: 0;
 }
 
 .hidden {
@@ -58,32 +64,26 @@ h1 {
 }
 
 /* Styles pour les boutons */
-#restaurant-button, #ycs-button, #decouverte-button {
+#restaurant-button, #ycs-button, #decouverte-button, #best-place-button {
     background-color: #333;
     color: #fff;
     border: 2px solid transparent;
-    padding: 30px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5;
-}
-
-#restaurant-button:hover, #ycs-button:hover, #decouverte-button:hover {
-    background-color: #727272;
-}
-
-#best-place-button {
-    background-color: #333;
-    color: #fff;
-    border: 2px solid transparent;
-    padding: 30px 20px;
+    padding: 20px;
     border-radius: 5px;
     cursor: pointer;
     margin: 0;
-    transition: background-color 0.3s;
+    font-family: 'proxima-nova-extra-condensed', sans-serif;
+    font-size: 1rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px;
 }
 
-#best-place-button:hover {
+#restaurant-button:hover, #ycs-button:hover, #decouverte-button:hover, #best-place-button:hover {
     background-color: #727272;
 }
 
@@ -115,17 +115,20 @@ h1 {
         max-width: calc(33.333% - 20px);
         height: auto;
         margin: 10px 0;
-        margin-left: calc(100vw / 6);
-        margin-right: calc(100vw / 6);
     }
 
-    /* Sélectionnez la première image de la famille "restaurant-image" */
     #gallery img[src^="restaurant-image"]:first-child {
-        margin-top: 300px; /* Ajoutez une marge au-dessus de la première image "restaurant-image" */
+        margin-top: 300px;
     }
 
-    /* Sélectionnez toutes les images de la famille "restaurant-image" */
     #gallery img[src^="restaurant-image"] {
-        clear: left; /* Forcez chaque image "restaurant-image" à être sur une nouvelle ligne */
+        clear: left;
+    }
+}
+
+@media (max-width: 767px) {
+    #gallery {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
