@@ -21,8 +21,6 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-left: calc(100vw / 6);
-    margin-right: calc(100vw / 6);
 }
 
 #gallery img {
@@ -115,6 +113,8 @@ h1 {
         max-width: calc(33.333% - 20px);
         height: auto;
         margin: 10px 0;
+        margin-left: calc(100vw / 6);
+        margin-right: calc(100vw / 6);
     }
 
     /* Sélectionnez la première image de la famille "restaurant-image" */
