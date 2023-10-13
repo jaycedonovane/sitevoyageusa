@@ -32,7 +32,6 @@ h1 {
 
 /* Styles pour la barre de menu */
 #menu {
-    position: fixed;
     margin: 5;
     top: -100px;
     left: 0;
