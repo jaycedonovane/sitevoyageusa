@@ -142,6 +142,7 @@ p {
 
     #gallery img[src^="restaurant-image"]:first-child {
         margin-top: 150px;
+        margin-bottom: 100px;
     }
 
     #gallery img[src^="restaurant-image"] {
